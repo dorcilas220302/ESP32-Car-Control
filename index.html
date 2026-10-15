@@ -5,18 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESP32</title>
     <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="./mini_font/css/all.css">
 </head>
 <body>
      <section >
-        <h1>Validor Car Control</h1>
-        <p>State : <span id="state">Not connected!</span></p>
-        <div id="buttons">
-                <button id="forward">Forward</button>
-             <div id="steering">
-                <button id="left">Left</button>
-                <button id="right">Right</button>
+         <div class="upper">
+            <div class="left">
+
             </div>
-             <button id="backward">Backward</button>
+            <h1>Validor Car Control</h1>
+            <div class="right">
+            </div>
+         </div>
+        <p>Status :
+             <span id ="state-not">Not connected! <i class="fas fa-times"></i></span>
+             <span id ="state-yes">Connected! <i class="fas fa-check"></i></span>
+            </p>
+        <div id="buttons">
+                <button id="forward">
+                    <i class="fas fa-arrow-alt-circle-up"></i>
+                </button>
+             <div id="steering">
+                <button id="left">
+                    <i class="fas fa-arrow-alt-circle-left"></i>
+                </button>
+                <button id="right">
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                </button>
+            </div>
+             <button id="backward">
+                    <i class="fas fa-arrow-alt-circle-down"></i>
+                </button>
         </div>
      </section>
     <script src="./app.js"></script>

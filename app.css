@@ -16,6 +16,28 @@ section{
     background: linear-gradient(rgb(255, 80, 188),rgb(5, 167, 216));
 }
 
+section .upper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw;
+}
+
+section .upper .left{
+    clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+    width: 2vw;
+    height: 2vw;
+    background-color: rgb(255, 80, 188);
+}
+
+section .upper .right{
+    clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+    width: 2vw;
+    height: 2vw;
+    background-color: rgb(255, 80, 188);
+}
+
 section h1{
     font-size: 2vw;
     color: white;
@@ -32,6 +54,30 @@ section p{
     font-family: 'Courier New', Courier, monospace;
     margin-bottom: 1vw;
 }
+
+section p span{
+    color: white;
+    font-weight: 800;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+section p #state-yes{
+    display: none;
+}
+
+section p span .fa-times{
+    color: red;
+    font-size: 1.5vw;
+}
+
+
+section p span .fa-check{
+    color: green;
+    font-size: 1.5vw;
+}
+
+
+
 
 section #buttons{
     width: 100%;
@@ -87,28 +133,76 @@ section{
     background: #4B79A1;  /* fallback for old browsers */
     background: linear-gradient(to top, #283E51, #4B79A1); 
     padding: 2vw;
-    padding-top: 10vw;
+    padding-top: 14vw;
+}
+
+
+section .upper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw;
+    margin-bottom: 10vw;
+}
+
+
+section .upper .left{
+    clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+    width: 10vw;
+    height: 10vw;
+    background-color: rgb(255, 80, 188);
+}
+
+section .upper .right{
+    clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+    width: 10vw;
+    height: 10vw;
+    background-color: rgb(255, 80, 188);
 }
 
 
 section h1{
     font-size: 5vw;
-    color: white;
-    font-weight: 800;
+    font-weight: 900;
     font-family: 'Courier New', Courier, monospace;
     text-transform: capitalize;
-    margin-bottom: 5vw;
+    background-color: white;
+    padding: 2vw;
+    border-radius: 2vw;
+    color: rgb(255, 80, 188);
 }
 
 
 section p{
-     font-size: 3vw;
+
+    font-size: 5vw;
     color: rgb(25, 24, 24);
-    font-weight: 600;
+    font-weight: 800;
     font-family: 'Courier New', Courier, monospace;
-    margin-bottom: 12vw;
+    margin-bottom: 18vw;
 }
 
+
+
+section p span{
+    color: white;
+    font-weight: 800;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+section p span .fa-times{
+    color: red;
+    font-size: 5vw;
+    
+}
+
+
+section p span .fa-check{
+    color: green;
+    font-size: 5vw;
+}
 
 
 section #buttons{
@@ -130,14 +224,14 @@ section #buttons div{
 }
 
 section #buttons  button{
-    width: 17vw;
-    height: 17vw;
+    width: 25vw;
+    height: 25vw;
     border: none;
     outline: none;
     background: rgb(255, 80, 188);
     color: white;
-    font-size: 3vw;
-    font-weight: 800;
+    font-size: 10vw;
+    font-weight: 900;
     font-family: 'Courier New', Courier, monospace;
     text-transform: capitalize;
     border-radius: 0.5vw;
@@ -145,14 +239,26 @@ section #buttons  button{
     transition: 0.15s;
     margin-bottom: 3vw;
     border-radius: 50%;
+     display: flex;
+    align-items: center;
+    justify-content: center;
 
-}
+     /* Remove text selection */
+    user-select: none;
+    -webkit-user-select: none;
 
-section #buttons  button:hover{
-    background: black;
-}
-section #buttons button:active{
-    background: rgb(255, 80, 188);
+    /* Remove the mobile tap highlight */
+    -webkit-tap-highlight-color: transparent;
+
+    /* Prevent touch gestures from interfering */
+    touch-action: none;
+
+    /* Remove default browser appearance */
+    appearance: none;
+    -webkit-appearance: none;
+
+    /* Remove the default outline */
+    outline: none;
 
 }
 
