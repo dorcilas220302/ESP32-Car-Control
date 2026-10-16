@@ -36,7 +36,6 @@ let IPAddress = "192.168.43.234"
 // }, 100);
 
 
-let IPAddress = "192.168.43.234";
 
 async function checkConnection() {
     try {
