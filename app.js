@@ -10,31 +10,59 @@ console.log("backward", backward_button);
 
 let IPAddress = "192.168.43.234"
 
-setInterval(async () => {
+// setInterval(async () => {
 
-     try {
+//      try {
 
         
-    let a = await fetch(`http://${IPAddress}/connexion`, {
-        targetAddressSpace : "local"
-    })
-    a = (await a.text()).toString()
+//     let a = await fetch(`http://${IPAddress}/connexion`, {
+//         targetAddressSpace : "local"
+//     })
+//     a = (await a.text()).toString()
  
 
-    if (a == "connected") {
-        document.getElementById("state-yes").style.display = "inline"
-        document.getElementById("state-not").style.display = "none"
-    }
+//     if (a == "connected") {
+//         document.getElementById("state-yes").style.display = "inline"
+//         document.getElementById("state-not").style.display = "none"
+//     }
 
 
         
-    } catch (error) {
-        alert("Error: " + error)
-    }
+//     } catch (error) {
+//         alert("Error: " + error)
+//     }
     
 
-}, 100);
+// }, 100);
 
+
+let IPAddress = "192.168.43.234";
+
+async function checkConnection() {
+    try {
+        const response = await fetch(
+            `http://${IPAddress}/connexion`,
+            {
+                targetAddressSpace: "private"
+            }
+        );
+
+        const message = await response.text();
+
+        if (message.trim() === "connected") {
+            document.getElementById("state-yes").style.display = "inline";
+            document.getElementById("state-not").style.display = "none";
+        }
+    } catch (error) {
+        console.error("ESP32 connection failed:", error);
+
+        // document.getElementById("state-yes").style.display = "none";
+        // document.getElementById("state-not").style.display = "inline";
+    }
+}
+
+checkConnection();
+setInterval(checkConnection, 2000);
 
 left_button.addEventListener("pointerdown", async()=>{
     left_button.style.backgroundColor = "black"
