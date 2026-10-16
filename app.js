@@ -11,8 +11,10 @@ console.log("backward", backward_button);
 let IPAddress = "192.168.43.234"
 
 setInterval(async () => {
-    
 
+     try {
+
+        
     let a = await fetch(`http://${IPAddress}/connexion`, {
         targetAddressSpace : "local"
     })
@@ -24,6 +26,12 @@ setInterval(async () => {
         document.getElementById("state-not").style.display = "none"
     }
 
+
+        
+    } catch (error) {
+        alert("Error: " + error)
+    }
+    
 
 }, 100);
 
@@ -162,6 +170,8 @@ forward_button.addEventListener("pointerleave", async()=>{
 
 
 forward_button.addEventListener("pointercancel", async()=>{
+
+   
      forward_button.style.backgroundColor = "rgb(255, 80, 188)"
     let a = await fetch(`http://${IPAddress}/forward/stop`,
          {
