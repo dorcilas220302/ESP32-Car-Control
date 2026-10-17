@@ -42,7 +42,7 @@ async function checkConnection() {
         const response = await fetch(
             `http://${IPAddress}/connexion`,
             {
-                targetAddressSpace: "private"
+                targetAddressSpace: "local"
             }
         );
 
