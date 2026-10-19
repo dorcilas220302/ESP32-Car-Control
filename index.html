@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./mini_font/css/all.css">
 </head>
 <body>
-     <section >
+    
+      <div class="right-section">
          <div class="upper">
             <div class="left">
 
@@ -29,6 +30,9 @@
                 <button id="left">
                     <i class="fas fa-arrow-alt-circle-left"></i>
                 </button>
+                 <div class="div-img">
+                    <img src="./img/car-top-view.png" alt="">
+                 </div>
                 <button id="right">
                     <i class="fas fa-arrow-alt-circle-right"></i>
                 </button>
@@ -37,7 +41,44 @@
                     <i class="fas fa-arrow-alt-circle-down"></i>
                 </button>
         </div>
-     </section>
+
+        <div class="battery">
+            <div class="esp-battery">
+               <div class="battery-upper">
+                 <h2>ESP32 battery : </h2>
+                 <span>98%</span>
+               </div>
+               <div class="indicator">
+                    <div class="child">
+
+                    </div>
+               </div>
+            </div>
+            <div class="esp-battery">
+               <div class="battery-upper">
+                 <h2>motors battery : </h2>
+                 <span>98%</span>
+               </div>
+               <div class="indicator">
+                    <div class="child">
+
+                    </div>
+               </div>
+            </div>
+        </div>
+
+        <div class="speed">
+            <h3>speed : <span id="speed-write">50%</span></h3>
+            <div class="indicator">
+                <i class="fas fa-minus" id="minus"></i>
+                <div class="move">
+                    <div class="body" id="speed-body"></div>
+                </div>
+                <i class="fas fa-plus" id="plus"></i>
+            </div>
+        </div>
+     </div>
+
     <script src="./app.js"></script>
 </body>
 </html>

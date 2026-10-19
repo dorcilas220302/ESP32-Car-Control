@@ -8,6 +8,9 @@ console.log("right", right_button);
 console.log("forward", forward_button);
 console.log("backward", backward_button);
 
+
+
+
 let IPAddress = "192.168.1.166"
 
 // setInterval(async () => {
@@ -259,6 +262,220 @@ backward_button.addEventListener("pointercancel", async()=>{
     )
     a = (await a.text()).toString()
    
+})
+
+
+
+
+//key down event : 
+
+document.addEventListener("keydown", async(e)=>{
+   
+    let key = e.key
+    
+    switch (key) {
+        case "ArrowUp":
+            
+        try {
+
+          let a = await fetch(`http://${IPAddress}/forward`,
+           {
+           targetAddressSpace : "local"
+            }
+          )
+          a = (await a.text()).toString()
+            
+        } catch (error) {
+            alert("there is an error while pressing up : ", error)
+        }
+
+         break;
+
+
+         case "ArrowDown" : 
+
+         try {
+
+             let b = await fetch(`http://${IPAddress}/backward`,
+              {
+               targetAddressSpace : "local"
+               }
+                )
+
+            b= (await b.text()).toString()
+            
+         } catch (errorb) {
+             alert('there is an error while pressing down : ', errorb)
+         }
+
+
+         break;
+    
+
+
+     case "ArrowLeft" :
+        try {
+             let c = await fetch(`http://${IPAddress}/left`,
+           {
+            targetAddressSpace : "local"
+            }
+          )
+          c = (await c.text()).toString()
+        } catch (errorc) {
+            alert("there is an error while pressing left : ", errorc)
+        }
+
+         break;
+
+
+         case "ArrowRight" :
+             try {
+             let d = await fetch(`http://${IPAddress}/right`,
+           {
+            targetAddressSpace : "local"
+            }
+          )
+          d = (await d.text()).toString()
+        } catch (errord) {
+            alert("there is an error while pressing right : ", errord)
+        }
+         break;
+
+
+    }
+   
+})
+
+
+
+document.addEventListener("keyup", async(e)=>{
+   
+    let key = e.key
+    
+    switch (key) {
+        case "ArrowUp":
+            
+        try {
+
+          let a = await fetch(`http://${IPAddress}/forward/stop`,
+           {
+           targetAddressSpace : "local"
+            }
+          )
+          a = (await a.text()).toString()
+            
+        } catch (error) {
+            alert("there is an error while pressing up up : ", error)
+        }
+
+         break;
+
+
+         case "ArrowDown" : 
+
+         try {
+
+             let b = await fetch(`http://${IPAddress}/backward/stop`,
+              {
+               targetAddressSpace : "local"
+               }
+                )
+
+            b= (await b.text()).toString()
+            
+         } catch (errorb) {
+             alert('there is an error while pressing down up : ', errorb)
+         }
+
+
+         break;
+    
+
+
+     case "ArrowLeft" :
+        try {
+             let c = await fetch(`http://${IPAddress}/left/stop`,
+           {
+            targetAddressSpace : "local"
+            }
+          )
+          c = (await c.text()).toString()
+        } catch (errorc) {
+            alert("there is an error while pressing left up : ", errorc)
+        }
+
+         break;
+
+
+         case "ArrowRight" :
+             try {
+             let d = await fetch(`http://${IPAddress}/right/stop`,
+           {
+            targetAddressSpace : "local"
+            }
+          )
+          d = (await d.text()).toString()
+        } catch (errord) {
+            alert("there is an error while pressing right up : ", errord)
+        }
+         break;
+
+
+    }
+   
+})
+
+
+//speed write : 
+
+const speedWrite = document.getElementById("speed-write");
+const MinusButton = document.getElementById("minus");
+const PlusButton = document.getElementById("plus")
+
+const SpeedBody = document.getElementById("speed-body")
+
+
+
+console.log("minus",MinusButton);
+console.log("plus",PlusButton);
+
+
+let content_speed = 50;
+
+
+
+MinusButton.addEventListener("click", ()=>{
+
+
+    if (content_speed > 0) {
+          content_speed = content_speed - 1;
+
+       speedWrite.textContent = `${content_speed}%`
+
+         SpeedBody.style.width = `${content_speed}%`
+    }
+
+
+})
+
+
+
+PlusButton.addEventListener("click", ()=>{
+
+    console.log("okey ve");
+    
+
+    if (content_speed < 100) {
+        
+    content_speed = content_speed + 1;
+
+    speedWrite.textContent = `${content_speed}%`
+
+    SpeedBody.style.width = `${content_speed}%`;
+    }
+
+    
+
 })
 
 
