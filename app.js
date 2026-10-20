@@ -10,33 +10,7 @@ console.log("backward", backward_button);
 
 
 
-
-let IPAddress = "192.168.1.166"
-
-// setInterval(async () => {
-
-//      try {
-
-        
-//     let a = await fetch(`http://${IPAddress}/connexion`, {
-//         targetAddressSpace : "local"
-//     })
-//     a = (await a.text()).toString()
- 
-
-//     if (a == "connected") {
-//         document.getElementById("state-yes").style.display = "inline"
-//         document.getElementById("state-not").style.display = "none"
-//     }
-
-
-        
-//     } catch (error) {
-//         alert("Error: " + error)
-//     }
-    
-
-// }, 100);
+let IPAddress = "192.168.43.234"
 
 
 
@@ -56,10 +30,8 @@ async function checkConnection() {
             document.getElementById("state-not").style.display = "none";
         }
     } catch (error) {
-        console.error("ESP32 connection failed:", error);
+        alert("ESP32 connection failed:", error);
 
-        // document.getElementById("state-yes").style.display = "none";
-        // document.getElementById("state-not").style.display = "inline";
     }
 }
 

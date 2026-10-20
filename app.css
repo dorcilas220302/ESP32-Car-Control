@@ -160,6 +160,7 @@
     justify-content: space-between;
     position: absolute;
     top: 30%;
+    pointer-events: none;
 }
 
 .right-section .battery .esp-battery{
@@ -168,6 +169,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    pointer-events: none;
+
 }
 
 .right-section .battery .esp-battery .battery-upper{
